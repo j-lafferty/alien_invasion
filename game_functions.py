@@ -1,11 +1,23 @@
 import sys
 import pygame
 
-def check_events():
+def check_events(ship):
     """Respond to keypresses and mouse events"""
     for event in pygame.event.get():
             if event.type == pygame.QUIT: 
                 sys.exit()
+                
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_RIGHT or event.key == pygame.K_d or event.key == pygame.K_KP6:
+                    ship.moving_right = True
+                if event.key == pygame.K_LEFT or event.key == pygame.K_a or event.key == pygame.K_KP4:
+                    ship.moving_left = True
+
+            elif event.type == pygame.KEYUP:
+                if event.key == pygame.K_RIGHT or event.key == pygame.K_d or event.key == pygame.K_KP6:
+                    ship.moving_right = False
+                elif event.key == pygame.K_LEFT or event.key == pygame.K_a or event.key == pygame.K_KP4:
+                    ship.moving_left = False
 
 def update_screen(ai_settings, screen, ship):
     """Update images on the screen and flip to the new screen."""
