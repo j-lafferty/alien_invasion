@@ -1,2 +1,6 @@
 # Ignore folder named '__pycache__'
 __pycache__/
+
+# Ignore files VS Code setting created on OS X
+.DS_Store
+settings.json
