@@ -41,10 +41,11 @@ def check_events(ai_settings, screen, ship, bullets):
             elif event.type == pygame.KEYUP:
                 check_keyup_events(event, ship)                
 
-def update_screen(ai_settings, screen, ship, aliens, bullets):
+def update_screen(ai_settings, screen, ship, aliens, bullets, background):
     """Update images on the screen and flip to the new screen."""
     # Redraw the screen during each pass through the loop.
     screen.fill(ai_settings.bg_color)
+    background.blitme()
     # Redraw all bullets behind the ship and aliens.
     for bullet in bullets.sprites():
         bullet.draw_bullet()
