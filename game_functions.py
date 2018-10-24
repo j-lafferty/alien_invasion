@@ -60,6 +60,9 @@ def check_play_button(ai_settings, screen, stats, play_button, ship, aliens,
 
 def start_game(ai_settings, screen, stats, play_button, ship, aliens, bullets):
     """Start new game."""
+    # Reset the game settings.
+    ai_settings.initialize_dynamic_settings()
+    
     # Hide the mouse cursor.
     pygame.mouse.set_visible(False)
 
